@@ -1,5 +1,22 @@
 @startuml
+class App
+{
+parent: root;
+start()
+main()
+}
 
+class controller
+{
+CheckBox choice1;
+    CheckBox choice2;
+    deleteButton;
+    editButton;
+    addButton;
+    addList;
+    closeList;
+    deleteList;
+}
 class Item {
     complete : boolean
     text : String
@@ -43,6 +60,8 @@ enum Filter {
     INCOMPLETE
 }
 
+App -- controller
+controller -- ToDoListCollection
 ToDoList <|-- Item
 ToDoListCollection <|-- ToDoList
 
